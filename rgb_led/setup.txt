@@ -1,0 +1,18 @@
+Components Needed:
+Arduino
+RGB LED module
+Push button
+Breadboard
+
+1. Circuit Setup:
+
+RGB LED Module:
+Connect the Red pin of the RGB LED to digital pin 9 on the Arduino through a 220Ω resistor.
+Connect the Green pin of the RGB LED to digital pin 10 on the Arduino through a 220Ω resistor.
+Connect the Blue pin of the RGB LED to digital pin 11 on the Arduino through a 220Ω resistor.
+Connect the common cathode (GND) of the RGB LED to the GND on the Arduino.
+Push Button:
+
+Connect one side of the push button to 5V on the Arduino.
+Connect the other side of the push button to digital pin 2 on the Arduino.
+Place a pull-down resistor (10kΩ) between the push button pin connected to digital pin 2 and GND.
