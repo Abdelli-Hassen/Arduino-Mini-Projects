@@ -1,0 +1,41 @@
+Components Needed:
+ESP8266 Module
+Arduino Uno
+Breadboard (optional for easier connections)
+Jumper Wires
+Resistors (for voltage divider, if not using a level shifter)
+USB Cable (to connect Arduino Uno to the computer)
+Connections:
+Power Connections:
+Arduino 3.3V to ESP8266 VCC
+Arduino GND to ESP8266 GND
+Arduino 3.3V to ESP8266 CH_PD (or EN) (This enables the ESP8266)
+Arduino GND to ESP8266 GPIO0 (For bootloader mode)
+Communication Connections:
+Arduino RX (Pin 0) to ESP8266 TX
+Arduino TX (Pin 1) to ESP8266 RX (through a voltage divider or level shifter)
+Voltage Divider (if not using a level shifter):
+For the TX (Pin 1) on Arduino to RX on ESP8266:
+
+Arduino TX (Pin 1) connects to a voltage divider made of two resistors (e.g., 1kΩ and 2kΩ) before connecting to ESP8266 RX:
+Connect a 2kΩ resistor between Arduino TX and ESP8266 RX.
+Connect a 1kΩ resistor between ESP8266 RX and GND.
+Step-by-Step Instructions:
+Set Up Connections:
+
+Make the power and communication connections as described above.
+Ensure the voltage divider is correctly set up if you're not using a level shifter.
+Prepare the ESP8266 for Programming:
+
+Connect GPIO0 to GND to put the ESP8266 in bootloader mode.
+Upload Code Using Arduino Uno:
+
+Open the Arduino IDE.
+Select the correct board and port:
+Go to Tools > Board and select Generic ESP8266 Module.
+Go to Tools > Port and select the correct COM port.
+Upload your code.
+
+Accessing the ESP8266 Web Server:
+Use the IP address shown in the Serial Monitor to access the web server from your web browser:
+For example: http://192.168.1.100

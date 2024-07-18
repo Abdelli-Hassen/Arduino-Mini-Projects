@@ -1,0 +1,42 @@
+Components Needed:
+Arduino Uno or similar
+Bluetooth module (e.g., HC-05 or HC-06)
+Relay module (make sure it's suitable for the voltage and current rating of your appliances)
+LEDs (for status indication)
+Push button (for manual control)
+Resistors (220Ω for LEDs, 10kΩ for pull-down on the button)
+Breadboard and connecting wires
+Circuit Setup:
+Bluetooth Module (HC-05 or HC-06):
+
+Connect VCC to Arduino 5V.
+Connect GND to Arduino GND.
+Connect TXD to Arduino RX (via voltage divider if necessary).
+Connect RXD to Arduino TX.
+Relay Module:
+
+Connect VCC of the relay module to Arduino 5V.
+Connect GND of the relay module to Arduino GND.
+Connect the input pin of the relay to a digital pin on the Arduino (e.g., pin 7).
+LEDs:
+
+Connect the cathode (shorter leg) of each LED to GND through a 220Ω resistor.
+Connect the anode (longer leg) of each LED to a digital pin on the Arduino (e.g., pins 8, 9, 10).
+Push Button:
+
+Connect one side of the push button to 5V on the Arduino.
+Connect the other side to a digital pin on the Arduino (e.g., pin 2).
+Place a 10kΩ pull-down resistor between the push button pin connected to the digital pin and GND.
+
+Explanation:
+Bluetooth Module Setup: Uses SoftwareSerial library to communicate with the Bluetooth module on pins 3 (RX) and 4 (TX).
+Button Press Handling: Toggles the relay state (HIGH/LOW) when the push button is pressed.
+Bluetooth Commands: Listens for commands ('1', '2', '3', '0') sent from a Bluetooth terminal (like an app on your smartphone).
+'1', '2', '3' turn on respective LEDs.
+'0' turns off all LEDs.
+Usage:
+Upload the Code: Upload the provided Arduino code to your Arduino board.
+Connect Bluetooth: Pair your smartphone with the Bluetooth module (HC-05/HC-06).
+Control LEDs and Relay:
+Use a Bluetooth terminal app on your smartphone to send commands ('1', '2', '3', '0') to control LEDs.
+Press the push button to toggle the relay (simulate appliance control).
